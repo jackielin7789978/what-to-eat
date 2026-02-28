@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (Design Tokens) ─────────────────────────────────── */
+:root {
+  /* Primary: Warm Orange */
+  --color-primary-50:  #fff7ed;
+  --color-primary-100: #ffedd5;
+  --color-primary-200: #fed7aa;
+  --color-primary-300: #fdba74;
+  --color-primary-400: #fb923c;
+  --color-primary-500: #f97316;
+  --color-primary-600: #ea580c;
+  --color-primary-700: #c2410c;
+  --color-primary-800: #9a3412;
+  --color-primary-900: #7c2d12;
+
+  /* Secondary: Warm Yellow */
+  --color-secondary-50:  #fefce8;
+  --color-secondary-100: #fef9c3;
+  --color-secondary-200: #fef08a;
+  --color-secondary-300: #fde047;
+  --color-secondary-400: #facc15;
+  --color-secondary-500: #eab308;
+  --color-secondary-600: #ca8a04;
+  --color-secondary-700: #a16207;
+
+  /* Surface */
+  --color-surface:      #fafaf9;
+  --color-surface-card: #ffffff;
+  --color-surface-hover: #f5f5f4;
+
+  /* Text */
+  --color-text-base:   #1c1917;
+  --color-text-muted:  #78716c;
+  --color-text-invert: #fafaf9;
+
+  /* Shape */
+  --radius-card: 1rem;
+  --radius-btn:  9999px;
+
+  /* Shadow */
+  --shadow-card:       0 2px 8px 0 rgb(0 0 0 / 0.08);
+  --shadow-card-hover: 0 8px 24px 0 rgb(0 0 0 / 0.14);
+
+  /* Typography */
+  --font-sans: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --color-surface:      #1c1917;
+  --color-surface-card: #292524;
+  --color-surface-hover: #3b2f2a;
+  --color-text-base:   #fafaf9;
+  --color-text-muted:  #a8a29e;
+  --color-text-invert: #1c1917;
+  --shadow-card:       0 2px 8px 0 rgb(0 0 0 / 0.4);
+  --shadow-card-hover: 0 8px 24px 0 rgb(0 0 0 / 0.5);
+}
+
+/* ── Base Styles ────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text-base);
+    background-color: var(--color-surface);
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+/* ── Component Layer ────────────────────────────────────────────────────────── */
+@layer components {
+  .card {
+    @apply rounded-card bg-surface-card shadow-card transition-shadow duration-200 hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply rounded-btn bg-primary-500 px-6 py-3 font-semibold text-white transition-colors duration-150
+           hover:bg-primary-600 active:bg-primary-700
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply rounded-btn border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-medium text-primary-700
+           transition-colors duration-150 hover:bg-primary-100 active:bg-primary-200
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
