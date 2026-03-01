@@ -2,10 +2,11 @@ import { ref, computed } from 'vue'
 import { useGeolocation } from './useGeolocation'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { restaurantService } from '@/services/restaurantService'
+import type { RestaurantCategory, PriceLevel } from '@/types/restaurant'
 
 export type SortMode = 'distance' | 'rating'
 
-const THROTTLE_MS = 10_000
+const THROTTLE_MS = 2_000
 
 /** Haversine formula — returns distance in metres */
 function haversineMeters(lat1: number, lng1: number, lat2: number, lng2: number): number {
@@ -25,6 +26,8 @@ export function useRestaurants() {
 
   const sortBy = ref<SortMode>('distance')
   const openNowFilter = ref(true)
+  const selectedCategory = ref<RestaurantCategory>('random')
+  const priceLevelFilter = ref<PriceLevel | null>(null)
   const isThrottled = ref(false)
   let throttleTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -33,9 +36,16 @@ export function useRestaurants() {
       sortBy.value === 'rating'
         ? restaurantStore.sortedByRating
         : restaurantStore.sortedByDistance
-    if (!openNowFilter.value) return sorted
-    return sorted.filter((r) => r.isOpen === true)
+    let filtered = openNowFilter.value ? sorted.filter((r) => r.isOpen === true) : sorted
+    if (priceLevelFilter.value !== null) {
+      filtered = filtered.filter((r) => r.priceLevel === priceLevelFilter.value)
+    }
+    return filtered
   })
+
+  const isFilteredEmpty = computed(
+    () => restaurantStore.restaurants.length > 0 && displayedRestaurants.value.length === 0,
+  )
 
   const canFetch = computed(() => !isThrottled.value && restaurantStore.status !== 'loading')
 
@@ -53,7 +63,7 @@ export function useRestaurants() {
 
     restaurantStore.setLoading()
     try {
-      const raw = await restaurantService.fetchNearby(lat, lng, 1000)
+      const raw = await restaurantService.fetchNearby(lat, lng, 1000, selectedCategory.value)
 
       const withDistance = raw.map((r) => ({
         ...r,
@@ -72,14 +82,27 @@ export function useRestaurants() {
     sortBy.value = mode
   }
 
+  function setCategory(cat: RestaurantCategory) {
+    selectedCategory.value = cat
+  }
+
+  function setPriceLevelFilter(level: PriceLevel | null) {
+    priceLevelFilter.value = level
+  }
+
   return {
     sortBy,
     openNowFilter,
+    selectedCategory,
+    priceLevelFilter,
     canFetch,
     isThrottled,
+    isFilteredEmpty,
     displayedRestaurants,
     restaurantStore,
     fetchNearby,
     setSortBy,
+    setCategory,
+    setPriceLevelFilter,
   }
 }
