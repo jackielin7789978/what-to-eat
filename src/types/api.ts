@@ -34,5 +34,5 @@ export interface RoutesResponse {
 
 export interface ApiErrorResponse {
   error: string
-  code: 'INVALID_PARAMS' | 'UPSTREAM_ERROR' | 'NOT_FOUND' | 'INTERNAL_ERROR' | 'NO_API_KEY'
+  code: 'INVALID_PARAMS' | 'UPSTREAM_ERROR' | 'NOT_FOUND' | 'INTERNAL_ERROR' | 'NO_API_KEY' | 'QUOTA_EXCEEDED'
 }

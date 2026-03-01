@@ -1,15 +1,16 @@
 import type { Restaurant } from '@/types/restaurant'
 import type { PlacesNearbyResponse, PlaceRaw, ApiErrorResponse } from '@/types/api'
 
-async function fetchNearby(lat: number, lng: number, radius = 1000): Promise<Restaurant[]> {
-  const url = `/api/nearby-restaurants?lat=${lat}&lng=${lng}&radius=${radius}`
+async function fetchNearby(lat: number, lng: number, radius = 1000, category = 'random'): Promise<Restaurant[]> {
+  const url = `/api/nearby-restaurants?lat=${lat}&lng=${lng}&radius=${radius}&category=${category}`
   const res = await fetch(url)
 
   if (!res.ok) {
     const body: ApiErrorResponse = await res.json().catch(() => ({
       error: 'Unknown error',
-      code: 'INTERNAL_ERROR',
+      code: 'INTERNAL_ERROR' as const,
     }))
+    if (body.code === 'QUOTA_EXCEEDED') throw new Error('QUOTA_EXCEEDED')
     throw new Error(body.error)
   }
 

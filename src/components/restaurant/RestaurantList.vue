@@ -16,6 +16,14 @@
   <!-- Error state -->
   <BaseError v-else-if="status === 'error'" title="取得餐廳失敗" :message="errorMessage ?? undefined" />
 
+  <!-- Filtered empty state -->
+  <EmptyState
+    v-else-if="status === 'success' && isFilteredEmpty"
+    icon="🔍"
+    title="沒有符合篩選條件的餐廳"
+    description="試試放寬價位篩選，或切換「僅顯示營業中的店家」看看"
+  />
+
   <!-- Empty state -->
   <EmptyState
     v-else-if="status === 'success' && restaurants.length === 0"
@@ -57,6 +65,7 @@ interface Props {
   restaurants: Restaurant[]
   status: RestaurantListStatus
   errorMessage?: string | null
+  isFilteredEmpty?: boolean
 }
 
 defineProps<Props>()

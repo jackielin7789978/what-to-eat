@@ -8,6 +8,11 @@
       <p class="text-text-muted">搜尋你方圓 1.0km 內的餐廳</p>
     </section>
 
+    <!-- Category selector -->
+    <div class="mb-4">
+      <CategorySelector v-model="selectedCategory" />
+    </div>
+
     <!-- Fetch button + open-now toggle -->
     <div class="mb-6 flex flex-col items-center gap-4">
       <BaseButton size="lg" :disabled="!canFetch" @click="fetchNearby">
@@ -17,7 +22,7 @@
 
       <!-- Toggle -->
       <label class="flex cursor-pointer items-center gap-2.5 select-none">
-        <span class="text-sm text-text-muted">僅顯示營業中</span>
+        <span class="text-sm text-text-muted">僅顯示營業中的店家</span>
         <button
           type="button"
           role="switch"
@@ -32,30 +37,6 @@
           />
         </button>
       </label>
-    </div>
-
-    <!-- Sort toggle：只在有結果時顯示，靠右對齊 -->
-    <div
-      v-if="restaurantStore.status === 'success' && restaurantStore.restaurants.length > 0"
-      class="mb-6 flex items-center justify-end gap-2"
-      role="group"
-      aria-label="排序方式"
-    >
-      <span class="text-sm text-text-muted">排序：</span>
-      <BaseButton
-        :variant="sortBy === 'distance' ? 'primary' : 'ghost'"
-        size="sm"
-        @click="setSortBy('distance')"
-      >
-        距離
-      </BaseButton>
-      <BaseButton
-        :variant="sortBy === 'rating' ? 'primary' : 'ghost'"
-        size="sm"
-        @click="setSortBy('rating')"
-      >
-        評分
-      </BaseButton>
     </div>
 
     <!-- Location error -->
@@ -74,11 +55,46 @@
       請稍等一下再重新搜尋 ☕
     </p>
 
-    <!-- Restaurant list -->
+    <!-- Quota exceeded warning -->
+    <div
+      v-if="restaurantStore.status === 'error' && restaurantStore.errorMessage === 'QUOTA_EXCEEDED'"
+      class="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-5 py-4"
+    >
+      <p class="text-base font-semibold text-amber-800">🔧 伺服器忙碌中</p>
+      <p class="mt-1 text-sm text-amber-700">API 使用量已達上限，請稍後再試</p>
+    </div>
+
+    <!-- Sort toggle + price filter：只在有結果時顯示 -->
+    <div
+      v-if="restaurantStore.status === 'success' && restaurantStore.restaurants.length > 0"
+      class="mb-6 flex flex-col gap-3"
+    >
+      <div class="flex items-center justify-end gap-2" role="group" aria-label="排序方式">
+        <span class="text-sm text-text-muted">排序：</span>
+        <BaseButton
+          :variant="sortBy === 'distance' ? 'primary' : 'ghost'"
+          size="sm"
+          @click="setSortBy('distance')"
+        >
+          距離
+        </BaseButton>
+        <BaseButton
+          :variant="sortBy === 'rating' ? 'primary' : 'ghost'"
+          size="sm"
+          @click="setSortBy('rating')"
+        >
+          評分
+        </BaseButton>
+      </div>
+      <PriceLevelFilter v-model="priceLevelFilter" />
+    </div>
+
+    <!-- Restaurant list (skip error display for QUOTA_EXCEEDED, handled above) -->
     <RestaurantList
       :restaurants="displayedRestaurants"
-      :status="restaurantStore.status"
+      :status="effectiveListStatus"
       :error-message="restaurantStore.errorMessage"
+      :is-filtered-empty="isFilteredEmpty"
     />
   </div>
 </template>
@@ -91,10 +107,30 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseSpinner from '@/components/ui/BaseSpinner.vue'
 import BaseError from '@/components/ui/BaseError.vue'
 import RestaurantList from '@/components/restaurant/RestaurantList.vue'
+import CategorySelector from '@/components/restaurant/CategorySelector.vue'
+import PriceLevelFilter from '@/components/restaurant/PriceLevelFilter.vue'
 
 const locationStore = useLocationStore()
-const { sortBy, openNowFilter, canFetch, isThrottled, displayedRestaurants, restaurantStore, fetchNearby, setSortBy } =
-  useRestaurants()
+const {
+  sortBy,
+  openNowFilter,
+  selectedCategory,
+  priceLevelFilter,
+  canFetch,
+  isThrottled,
+  isFilteredEmpty,
+  displayedRestaurants,
+  restaurantStore,
+  fetchNearby,
+  setSortBy,
+} = useRestaurants()
+
+// When QUOTA_EXCEEDED, show idle in RestaurantList (amber box is shown above instead)
+const effectiveListStatus = computed(() =>
+  restaurantStore.status === 'error' && restaurantStore.errorMessage === 'QUOTA_EXCEEDED'
+    ? 'idle'
+    : restaurantStore.status,
+)
 
 const fetchButtonLabel = computed(() => {
   if (restaurantStore.status === 'loading') return '搜尋中…'

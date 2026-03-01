@@ -31,3 +31,18 @@ export interface Restaurant {
 }
 
 export type RestaurantListStatus = 'idle' | 'loading' | 'success' | 'error'
+
+export type RestaurantCategory =
+  | 'random'
+  | 'taiwanese'
+  | 'japanese'
+  | 'korean'
+  | 'chinese'
+  | 'hot_pot'
+  | 'southeast_asian'
+  | 'western'
+  | 'italian'
+  | 'cafe_dessert'
+  | 'drinks'
+  | 'vegetarian'
+  | 'fast_food'
