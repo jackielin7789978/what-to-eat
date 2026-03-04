@@ -36,6 +36,41 @@
   --color-text-muted:  #78716c;
   --color-text-invert: #fafaf9;
 
+  /* Status: Open */
+  --color-status-open-bg:   #dcfce7;
+  --color-status-open-text: #15803d;
+  --color-status-open-dot:  #22c55e;
+
+  /* Status: Closed */
+  --color-status-closed-bg:   #f5f5f4;
+  --color-status-closed-text: #78716c;
+  --color-status-closed-dot:  #a8a29e;
+
+  /* Warning */
+  --color-warning-border: #fde68a;
+  --color-warning-bg:     #fffbeb;
+  --color-warning-title:  #92400e;
+  --color-warning-text:   #b45309;
+
+  /* Error */
+  --color-error-border: #fecaca;
+  --color-error-bg:     #fef2f2;
+  --color-error-text:   #b91c1c;
+  --color-error-muted:  #dc2626;
+
+  /* Skeleton */
+  --color-skeleton-strong: #e7e5e4;
+  --color-skeleton-subtle: #f5f5f4;
+
+  /* Chip (unselected) */
+  --color-chip-border: #e7e5e4;
+  --color-chip-bg:     #ffffff;
+  --color-chip-text:   #44403c;
+
+  /* Toggle (off) */
+  --color-toggle-off: #d6d3d1;
+  --color-toggle-knob: #ffffff;
+
   /* Shape */
   --radius-card: 1rem;
   --radius-btn:  9999px;
@@ -57,6 +92,38 @@
   --color-text-invert: #1c1917;
   --shadow-card:       0 2px 8px 0 rgb(0 0 0 / 0.4);
   --shadow-card-hover: 0 8px 24px 0 rgb(0 0 0 / 0.5);
+
+  --color-status-open-bg:   #052e16;
+  --color-status-open-text: #4ade80;
+  --color-status-open-dot:  #22c55e;
+
+  --color-status-closed-bg:   #292524;
+  --color-status-closed-text: #a8a29e;
+  --color-status-closed-dot:  #78716c;
+
+  --color-warning-border: #78350f;
+  --color-warning-bg:     #451a03;
+  --color-warning-title:  #fbbf24;
+  --color-warning-text:   #fcd34d;
+
+  --color-error-border: #7f1d1d;
+  --color-error-bg:     #450a0a;
+  --color-error-text:   #fca5a5;
+  --color-error-muted:  #f87171;
+
+  --color-skeleton-strong: #44403c;
+  --color-skeleton-subtle: #292524;
+
+  --color-chip-border: #44403c;
+  --color-chip-bg:     #292524;
+  --color-chip-text:   #d6d3d1;
+
+  --color-toggle-off: #57534e;
+  --color-toggle-knob: #e7e5e4;
+
+  --color-primary-50:  #431407;
+  --color-primary-100: #7c2d12;
+  --color-primary-300: #ea580c;
 }
 
 /* ── Base Styles ────────────────────────────────────────────────────────────── */

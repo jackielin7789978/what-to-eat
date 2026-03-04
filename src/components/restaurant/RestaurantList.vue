@@ -6,10 +6,10 @@
       :key="i"
       class="animate-skeleton rounded-card bg-surface-card p-5 shadow-card"
     >
-      <div class="mb-3 h-4 w-3/4 rounded bg-stone-200" />
-      <div class="mb-2 h-3 w-full rounded bg-stone-100" />
-      <div class="mb-2 h-3 w-2/3 rounded bg-stone-100" />
-      <div class="mt-4 h-8 w-28 rounded-full bg-stone-200" />
+      <div class="mb-3 h-4 w-3/4 rounded bg-skeleton-strong" />
+      <div class="mb-2 h-3 w-full rounded bg-skeleton-subtle" />
+      <div class="mb-2 h-3 w-2/3 rounded bg-skeleton-subtle" />
+      <div class="mt-4 h-8 w-28 rounded-full bg-skeleton-strong" />
     </div>
   </div>
 

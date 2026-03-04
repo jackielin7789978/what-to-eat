@@ -25,16 +25,16 @@
     <div v-if="restaurant.isOpen !== undefined">
       <span
         v-if="restaurant.isOpen"
-        class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700"
+        class="inline-flex items-center gap-1 rounded-full bg-status-open-bg px-2.5 py-0.5 text-xs font-medium text-status-open-text"
       >
-        <span class="h-1.5 w-1.5 rounded-full bg-green-500" aria-hidden="true" />
+        <span class="h-1.5 w-1.5 rounded-full bg-status-open-dot" aria-hidden="true" />
         營業中
       </span>
       <span
         v-else
-        class="inline-flex items-center gap-1 rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-500"
+        class="inline-flex items-center gap-1 rounded-full bg-status-closed-bg px-2.5 py-0.5 text-xs font-medium text-status-closed-text"
       >
-        <span class="h-1.5 w-1.5 rounded-full bg-stone-400" aria-hidden="true" />
+        <span class="h-1.5 w-1.5 rounded-full bg-status-closed-dot" aria-hidden="true" />
         休息中
       </span>
     </div>
@@ -79,7 +79,7 @@
         <span class="text-sm font-semibold text-primary-600">{{ walkingTime }}</span>
       </div>
 
-      <p v-if="walkingStatus === 'error'" class="mt-1 text-xs text-red-500">{{ walkingError }}</p>
+      <p v-if="walkingStatus === 'error'" class="mt-1 text-xs text-error-muted">{{ walkingError }}</p>
     </div>
   </article>
 </template>

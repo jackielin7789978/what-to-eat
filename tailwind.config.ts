@@ -36,6 +36,41 @@ export default {
         'text-base':   'var(--color-text-base)',
         'text-muted':  'var(--color-text-muted)',
         'text-invert': 'var(--color-text-invert)',
+        'status-open': {
+          bg:   'var(--color-status-open-bg)',
+          text: 'var(--color-status-open-text)',
+          dot:  'var(--color-status-open-dot)',
+        },
+        'status-closed': {
+          bg:   'var(--color-status-closed-bg)',
+          text: 'var(--color-status-closed-text)',
+          dot:  'var(--color-status-closed-dot)',
+        },
+        warning: {
+          border: 'var(--color-warning-border)',
+          bg:     'var(--color-warning-bg)',
+          title:  'var(--color-warning-title)',
+          text:   'var(--color-warning-text)',
+        },
+        error: {
+          border: 'var(--color-error-border)',
+          bg:     'var(--color-error-bg)',
+          text:   'var(--color-error-text)',
+          muted:  'var(--color-error-muted)',
+        },
+        skeleton: {
+          strong: 'var(--color-skeleton-strong)',
+          subtle: 'var(--color-skeleton-subtle)',
+        },
+        chip: {
+          border: 'var(--color-chip-border)',
+          bg:     'var(--color-chip-bg)',
+          text:   'var(--color-chip-text)',
+        },
+        toggle: {
+          off:  'var(--color-toggle-off)',
+          knob: 'var(--color-toggle-knob)',
+        },
       },
       borderRadius: {
         card: 'var(--radius-card)',

@@ -1,7 +1,7 @@
 <template>
-  <div role="alert" class="rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-red-700">
+  <div role="alert" class="rounded-xl border border-error-border bg-error-bg px-5 py-4 text-error-text">
     <p class="font-semibold">{{ title }}</p>
-    <p v-if="message" class="mt-1 text-sm text-red-600">{{ message }}</p>
+    <p v-if="message" class="mt-1 text-sm text-error-muted">{{ message }}</p>
     <slot />
   </div>
 </template>
