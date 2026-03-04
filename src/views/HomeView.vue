@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-5xl px-4 py-8">
+  <div class="mx-auto max-w-6xl px-4 py-8">
     <!-- Hero section -->
     <section class="mb-8 text-center">
       <h2 class="mb-2 text-2xl font-bold text-text-base sm:text-3xl">
@@ -28,11 +28,11 @@
           role="switch"
           :aria-checked="openNowFilter"
           class="relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
-          :class="openNowFilter ? 'bg-primary-500' : 'bg-stone-300'"
+          :class="openNowFilter ? 'bg-primary-500' : 'bg-toggle-off'"
           @click="openNowFilter = !openNowFilter"
         >
           <span
-            class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200"
+            class="pointer-events-none inline-block h-5 w-5 rounded-full bg-toggle-knob shadow-sm transition-transform duration-200"
             :class="openNowFilter ? 'translate-x-5' : 'translate-x-0'"
           />
         </button>
@@ -58,10 +58,10 @@
     <!-- Quota exceeded warning -->
     <div
       v-if="restaurantStore.status === 'error' && restaurantStore.errorMessage === 'QUOTA_EXCEEDED'"
-      class="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-5 py-4"
+      class="mb-6 rounded-xl border border-warning-border bg-warning-bg px-5 py-4"
     >
-      <p class="text-base font-semibold text-amber-800">🔧 伺服器忙碌中</p>
-      <p class="mt-1 text-sm text-amber-700">API 使用量已達上限，請稍後再試</p>
+      <p class="text-base font-semibold text-warning-title">🔧 伺服器忙碌中</p>
+      <p class="mt-1 text-sm text-warning-text">API 使用量已達上限，請稍後再試</p>
     </div>
 
     <!-- Sort toggle + price filter：只在有結果時顯示 -->

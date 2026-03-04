@@ -8,7 +8,7 @@
       :class="
         modelValue === cat.id
           ? 'border-primary-500 bg-primary-500 text-white'
-          : 'border-stone-200 bg-white text-stone-700 hover:border-primary-300 hover:text-primary-600'
+          : 'border-chip-border bg-chip-bg text-chip-text hover:border-primary-300 hover:text-primary-600'
       "
       @click="$emit('update:modelValue', cat.id)"
     >

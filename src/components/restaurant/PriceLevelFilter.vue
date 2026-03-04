@@ -1,16 +1,16 @@
 <template>
   <div class="flex items-center gap-2">
     <span class="shrink-0 text-sm text-text-muted">價位：</span>
-    <div class="flex gap-1.5">
+    <div class="flex gap-1.5 overflow-x-auto">
       <button
         v-for="option in OPTIONS"
         :key="option.label"
         type="button"
-        class="rounded-full border px-3 py-1 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1"
+        class="whitespace-nowrap rounded-full border px-3 py-1 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1"
         :class="
           modelValue === option.value
             ? 'border-primary-500 bg-primary-500 text-white'
-            : 'border-stone-200 bg-white text-stone-700 hover:border-primary-300 hover:text-primary-600'
+            : 'border-chip-border bg-chip-bg text-chip-text hover:border-primary-300 hover:text-primary-600'
         "
         @click="$emit('update:modelValue', option.value)"
       >
