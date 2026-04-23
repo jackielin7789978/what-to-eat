@@ -1,14 +1,16 @@
+import { useI18n } from 'vue-i18n'
 import { useLocationStore } from '@/stores/useLocationStore'
 import type { GeolocationError } from '@/types/location'
 
 export function useGeolocation() {
   const locationStore = useLocationStore()
+  const { t } = useI18n()
 
   async function requestLocation(): Promise<boolean> {
     if (!navigator.geolocation) {
       locationStore.setError({
         code: 'POSITION_UNAVAILABLE',
-        message: '此瀏覽器不支援地理定位功能',
+        message: t('geolocation.unsupported'),
       })
       return false
     }
@@ -27,7 +29,7 @@ export function useGeolocation() {
           resolve(true)
         },
         (err) => {
-          const geoError = mapGeolocationError(err)
+          const geoError = mapGeolocationError(err, t)
           locationStore.setError(geoError)
           resolve(false)
         },
@@ -39,15 +41,18 @@ export function useGeolocation() {
   return { requestLocation, locationStore }
 }
 
-function mapGeolocationError(err: GeolocationPositionError): GeolocationError {
+function mapGeolocationError(
+  err: GeolocationPositionError,
+  t: (key: string) => string,
+): GeolocationError {
   switch (err.code) {
     case GeolocationPositionError.PERMISSION_DENIED:
-      return { code: 'PERMISSION_DENIED', message: '使用者拒絕了位置存取權限，請在瀏覽器設定中允許' }
+      return { code: 'PERMISSION_DENIED', message: t('geolocation.permissionDenied') }
     case GeolocationPositionError.POSITION_UNAVAILABLE:
-      return { code: 'POSITION_UNAVAILABLE', message: '目前無法取得位置資訊，請確認裝置 GPS 是否開啟' }
+      return { code: 'POSITION_UNAVAILABLE', message: t('geolocation.positionUnavailable') }
     case GeolocationPositionError.TIMEOUT:
-      return { code: 'TIMEOUT', message: '定位逾時，請再試一次' }
+      return { code: 'TIMEOUT', message: t('geolocation.timeout') }
     default:
-      return { code: 'UNKNOWN', message: '發生未知錯誤，請再試一次' }
+      return { code: 'UNKNOWN', message: t('geolocation.unknown') }
   }
 }

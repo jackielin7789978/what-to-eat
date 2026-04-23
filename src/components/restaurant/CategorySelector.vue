@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap justify-center gap-2">
     <button
-      v-for="cat in CATEGORIES"
+      v-for="cat in categories"
       :key="cat.id"
       type="button"
       class="shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1"
@@ -18,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { RestaurantCategory } from '@/types/restaurant'
 
 interface Category {
@@ -26,21 +28,23 @@ interface Category {
   emoji: string
 }
 
-const CATEGORIES: Category[] = [
-  { id: 'random',       label: '隨機',   emoji: '🎲' },
-  { id: 'taiwanese',    label: '台式',   emoji: '🍜' },
-  { id: 'japanese',     label: '日式',   emoji: '🍱' },
-  { id: 'korean',       label: '韓式',   emoji: '🥩' },
-  { id: 'chinese',      label: '中式',   emoji: '🥟' },
-  { id: 'hot_pot',      label: '火鍋',   emoji: '🍲' },
-  { id: 'fast_food',    label: '速食',   emoji: '🍟' },
-  { id: 'southeast_asian', label: '東南亞', emoji: '🌏' },
-  { id: 'western',      label: '西式',   emoji: '🍔' },
-  { id: 'italian',      label: '義式',   emoji: '🍕' },
-  { id: 'vegetarian',   label: '蔬食',   emoji: '🥬' },
-  { id: 'cafe_dessert', label: '咖啡甜點', emoji: '☕' },
-  { id: 'drinks',       label: '飲料',   emoji: '🧃' },
-]
+const { t } = useI18n()
+
+const categories = computed((): Category[] => [
+  { id: 'random',          label: t('category.random'),         emoji: '🎲' },
+  { id: 'taiwanese',       label: t('category.taiwanese'),      emoji: '🍜' },
+  { id: 'japanese',        label: t('category.japanese'),       emoji: '🍱' },
+  { id: 'korean',          label: t('category.korean'),         emoji: '🥩' },
+  { id: 'chinese',         label: t('category.chinese'),        emoji: '🥟' },
+  { id: 'hot_pot',         label: t('category.hot_pot'),        emoji: '🍲' },
+  { id: 'fast_food',       label: t('category.fast_food'),      emoji: '🍟' },
+  { id: 'southeast_asian', label: t('category.southeast_asian'), emoji: '🌏' },
+  { id: 'western',         label: t('category.western'),        emoji: '🍔' },
+  { id: 'italian',         label: t('category.italian'),        emoji: '🍕' },
+  { id: 'vegetarian',      label: t('category.vegetarian'),     emoji: '🥬' },
+  { id: 'cafe_dessert',    label: t('category.cafe_dessert'),   emoji: '☕' },
+  { id: 'drinks',          label: t('category.drinks'),         emoji: '🧃' },
+])
 
 defineProps<{ modelValue: RestaurantCategory }>()
 defineEmits<{ 'update:modelValue': [value: RestaurantCategory] }>()

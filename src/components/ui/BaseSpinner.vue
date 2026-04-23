@@ -1,23 +1,22 @@
 <template>
   <span
     role="status"
-    :aria-label="label"
+    :aria-label="label ?? t('common.loading')"
     :class="['inline-block animate-spin-slow rounded-full border-4 border-current border-t-transparent', sizeClass]"
   />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 interface Props {
   size?: 'sm' | 'md' | 'lg'
   label?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  size: 'md',
-  label: '載入中…',
-})
+const props = defineProps<Props>()
+const { t } = useI18n()
 
 const sizeClass = computed(() => {
   switch (props.size) {

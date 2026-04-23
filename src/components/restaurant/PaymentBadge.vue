@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { PaymentOptions } from '@/types/restaurant'
 
 interface Props {
@@ -19,14 +20,15 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const { t } = useI18n()
 
 const badges = computed(() => {
   if (!props.options) return []
   const list: string[] = []
-  if (props.options.acceptsCreditCards) list.push('信用卡')
-  if (props.options.acceptsDebitCards) list.push('金融卡')
-  if (props.options.acceptsNfc) list.push('感應支付')
-  if (props.options.acceptsCashOnly) list.push('僅收現金')
+  if (props.options.acceptsCreditCards) list.push(t('payment.creditCard'))
+  if (props.options.acceptsDebitCards) list.push(t('payment.debitCard'))
+  if (props.options.acceptsNfc) list.push(t('payment.nfc'))
+  if (props.options.acceptsCashOnly) list.push(t('payment.cashOnly'))
   return list
 })
 </script>

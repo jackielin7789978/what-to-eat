@@ -3,9 +3,9 @@
     <!-- Hero section -->
     <section class="mb-8 text-center">
       <h2 class="mb-2 text-2xl font-bold text-text-base sm:text-3xl">
-        今天吃什麼？<span class="text-primary-500">讓我幫你決定</span>
+        {{ t('home.heading') }}<span class="text-primary-500">{{ t('home.headingAccent') }}</span>
       </h2>
-      <p class="text-text-muted">搜尋你方圓 1.0km 內的餐廳</p>
+      <p class="text-text-muted">{{ t('home.subheading') }}</p>
     </section>
 
     <!-- Category selector -->
@@ -22,7 +22,7 @@
 
       <!-- Toggle -->
       <label class="flex cursor-pointer items-center gap-2.5 select-none">
-        <span class="text-sm text-text-muted">僅顯示營業中的店家</span>
+        <span class="text-sm text-text-muted">{{ t('home.openNow') }}</span>
         <button
           type="button"
           role="switch"
@@ -43,7 +43,7 @@
     <BaseError
       v-if="locationStore.status === 'error' && locationStore.error"
       class="mb-6"
-      title="無法取得位置"
+      :title="t('home.locationError')"
       :message="locationStore.error.message"
     />
 
@@ -52,7 +52,7 @@
       v-if="isThrottled && restaurantStore.status !== 'loading'"
       class="mb-4 text-center text-sm text-text-muted"
     >
-      請稍等一下再重新搜尋 ☕
+      {{ t('home.throttleNotice') }}
     </p>
 
     <!-- Quota exceeded warning -->
@@ -60,8 +60,8 @@
       v-if="restaurantStore.status === 'error' && restaurantStore.errorMessage === 'QUOTA_EXCEEDED'"
       class="mb-6 rounded-xl border border-warning-border bg-warning-bg px-5 py-4"
     >
-      <p class="text-base font-semibold text-warning-title">🔧 伺服器忙碌中</p>
-      <p class="mt-1 text-sm text-warning-text">API 使用量已達上限，請稍後再試</p>
+      <p class="text-base font-semibold text-warning-title">{{ t('home.quotaTitle') }}</p>
+      <p class="mt-1 text-sm text-warning-text">{{ t('home.quotaMessage') }}</p>
     </div>
 
     <!-- Sort toggle + price filter：只在有結果時顯示 -->
@@ -69,21 +69,21 @@
       v-if="restaurantStore.status === 'success' && restaurantStore.restaurants.length > 0"
       class="mb-6 flex flex-col gap-3"
     >
-      <div class="flex items-center justify-end gap-2" role="group" aria-label="排序方式">
-        <span class="text-sm text-text-muted">排序：</span>
+      <div class="flex items-center justify-end gap-2" role="group" :aria-label="t('home.sortAriaLabel')">
+        <span class="text-sm text-text-muted">{{ t('home.sortLabel') }}</span>
         <BaseButton
           :variant="sortBy === 'distance' ? 'primary' : 'ghost'"
           size="sm"
           @click="setSortBy('distance')"
         >
-          距離
+          {{ t('home.sortDistance') }}
         </BaseButton>
         <BaseButton
           :variant="sortBy === 'rating' ? 'primary' : 'ghost'"
           size="sm"
           @click="setSortBy('rating')"
         >
-          評分
+          {{ t('home.sortRating') }}
         </BaseButton>
       </div>
       <PriceLevelFilter v-model="priceLevelFilter" />
@@ -101,6 +101,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRestaurants } from '@/composables/useRestaurants'
 import { useLocationStore } from '@/stores/useLocationStore'
 import BaseButton from '@/components/ui/BaseButton.vue'
@@ -110,6 +111,7 @@ import RestaurantList from '@/components/restaurant/RestaurantList.vue'
 import CategorySelector from '@/components/restaurant/CategorySelector.vue'
 import PriceLevelFilter from '@/components/restaurant/PriceLevelFilter.vue'
 
+const { t } = useI18n()
 const locationStore = useLocationStore()
 const {
   sortBy,
@@ -133,8 +135,8 @@ const effectiveListStatus = computed(() =>
 )
 
 const fetchButtonLabel = computed(() => {
-  if (restaurantStore.status === 'loading') return '搜尋中…'
-  if (isThrottled.value) return '稍後再試'
-  return '取得附近餐廳 🍜'
+  if (restaurantStore.status === 'loading') return t('home.fetchButtonLoading')
+  if (isThrottled.value) return t('home.fetchButtonThrottled')
+  return t('home.fetchButton')
 })
 </script>

@@ -1,4 +1,5 @@
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useGeolocation } from './useGeolocation'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { restaurantService } from '@/services/restaurantService'
@@ -23,6 +24,7 @@ function haversineMeters(lat1: number, lng1: number, lat2: number, lng2: number)
 export function useRestaurants() {
   const restaurantStore = useRestaurantStore()
   const { requestLocation, locationStore } = useGeolocation()
+  const { t } = useI18n()
 
   const sortBy = ref<SortMode>('distance')
   const openNowFilter = ref(true)
@@ -73,7 +75,7 @@ export function useRestaurants() {
 
       restaurantStore.setRestaurants(withDistance)
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : '無法取得附近餐廳，請稍後再試'
+      const msg = err instanceof Error ? err.message : t('errors.fetchRestaurants')
       restaurantStore.setError(msg)
     }
   }

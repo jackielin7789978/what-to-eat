@@ -3,7 +3,7 @@
     class="card group flex cursor-pointer flex-col gap-3 p-5 animate-fade-in-up"
     role="button"
     tabindex="0"
-    :aria-label="`開啟 ${restaurant.displayName} 的 Google Maps 頁面`"
+    :aria-label="t('restaurant.openMaps', { name: restaurant.displayName })"
     @click="openMaps"
     @keydown.enter.prevent="openMaps"
     @keydown.space.prevent="openMaps"
@@ -16,7 +16,7 @@
       <span
         v-if="priceLabel"
         class="shrink-0 text-lg"
-        :aria-label="`價位：${priceLabel}`"
+        :aria-label="t('restaurant.priceLabel', { label: priceLabel })"
         :title="priceLabel"
       >{{ priceEmoji }}</span>
     </div>
@@ -28,14 +28,14 @@
         class="inline-flex items-center gap-1 rounded-full bg-status-open-bg px-2.5 py-0.5 text-xs font-medium text-status-open-text"
       >
         <span class="h-1.5 w-1.5 rounded-full bg-status-open-dot" aria-hidden="true" />
-        營業中
+        {{ t('restaurant.open') }}
       </span>
       <span
         v-else
         class="inline-flex items-center gap-1 rounded-full bg-status-closed-bg px-2.5 py-0.5 text-xs font-medium text-status-closed-text"
       >
         <span class="h-1.5 w-1.5 rounded-full bg-status-closed-dot" aria-hidden="true" />
-        休息中
+        {{ t('restaurant.closed') }}
       </span>
     </div>
 
@@ -66,12 +66,12 @@
         :disabled="!hasLocation"
         @click="requestWalkingTime"
       >
-        <span>要走多久？</span>
+        <span>{{ t('restaurant.walkingTime') }}</span>
       </BaseButton>
 
       <div v-else-if="walkingStatus === 'loading'" class="flex items-center gap-2 text-sm text-text-muted">
         <BaseSpinner size="sm" />
-        <span>計算中…</span>
+        <span>{{ t('restaurant.calculating') }}</span>
       </div>
 
       <div v-else-if="walkingStatus === 'success'" class="flex items-center gap-1.5">
@@ -86,6 +86,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { Restaurant, PriceLevel } from '@/types/restaurant'
 import { useWalkingTime } from '@/composables/useWalkingTime'
 import { useLocationStore } from '@/stores/useLocationStore'
@@ -99,6 +100,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const { t } = useI18n()
 const locationStore = useLocationStore()
 const hasLocation = computed(() => locationStore.hasLocation)
 
@@ -120,19 +122,20 @@ const formattedDistance = computed(() => {
   return `${(m / 1000).toFixed(1)} km`
 })
 
-const PRICE_MAP: Record<PriceLevel, { emoji: string; label: string }> = {
-  PRICE_LEVEL_UNSPECIFIED:   { emoji: '',   label: '' },
-  PRICE_LEVEL_FREE:          { emoji: '🆓', label: '免費' },
-  PRICE_LEVEL_INEXPENSIVE:   { emoji: '💰', label: '便宜' },
-  PRICE_LEVEL_MODERATE:      { emoji: '💰💰', label: '中等' },
-  PRICE_LEVEL_EXPENSIVE:     { emoji: '💰💰💰', label: '較貴' },
-  PRICE_LEVEL_VERY_EXPENSIVE:{ emoji: '💰💰💰💰', label: '高級' },
+const PRICE_MAP: Record<PriceLevel, { emoji: string; labelKey: string }> = {
+  PRICE_LEVEL_UNSPECIFIED:    { emoji: '',       labelKey: '' },
+  PRICE_LEVEL_FREE:           { emoji: '🆓',     labelKey: 'priceLevel.free' },
+  PRICE_LEVEL_INEXPENSIVE:    { emoji: '💰',     labelKey: 'priceLevel.inexpensive' },
+  PRICE_LEVEL_MODERATE:       { emoji: '💰💰',   labelKey: 'priceLevel.moderate' },
+  PRICE_LEVEL_EXPENSIVE:      { emoji: '💰💰💰', labelKey: 'priceLevel.expensive' },
+  PRICE_LEVEL_VERY_EXPENSIVE: { emoji: '💰💰💰💰', labelKey: 'priceLevel.veryExpensive' },
 }
 
 const priceEmoji = computed(() =>
   props.restaurant.priceLevel ? PRICE_MAP[props.restaurant.priceLevel]?.emoji : '',
 )
-const priceLabel = computed(() =>
-  props.restaurant.priceLevel ? PRICE_MAP[props.restaurant.priceLevel]?.label : '',
-)
+const priceLabel = computed(() => {
+  const key = props.restaurant.priceLevel ? PRICE_MAP[props.restaurant.priceLevel]?.labelKey : ''
+  return key ? t(key as Parameters<typeof t>[0]) : ''
+})
 </script>
