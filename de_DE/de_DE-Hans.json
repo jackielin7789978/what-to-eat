@@ -1,0 +1,102 @@
+{
+    "app": {
+        "title": "Was gibt es in der Nähe zu essen?"
+    },
+    "theme": {
+        "switchToDark": "Dunkelmodus aktivieren",
+        "switchToLight": "Hellmodus aktivieren"
+    },
+    "footer": {
+        "text": "Datenquelle: Google Maps Platform · Nur zur Orientierung; bitte vor Ort überprüfen"
+    },
+    "category": {
+        "random": "Zufällig",
+        "taiwanese": "Taiwanesisch",
+        "japanese": "Japanisch",
+        "korean": "Koreanisch",
+        "chinese": "Chinesisch",
+        "hot_pot": "Hot Pot",
+        "fast_food": "Fast Food",
+        "southeast_asian": "Südostasiatisch",
+        "western": "Westlich",
+        "italian": "Italienisch",
+        "vegetarian": "Vegetarisch",
+        "cafe_dessert": "Café & Dessert",
+        "drinks": "Getränke"
+    },
+    "payment": {
+        "creditCard": "Kreditkarte",
+        "debitCard": "Debitkarte",
+        "nfc": "Kontaktlos",
+        "cashOnly": "Nur Barzahlung"
+    },
+    "priceLevel": {
+        "label": "Preis:",
+        "all": "Alle",
+        "free": "Kostenlos",
+        "inexpensive": "Günstig",
+        "moderate": "Mittel",
+        "expensive": "Teuer",
+        "veryExpensive": "Premium"
+    },
+    "restaurant": {
+        "openMaps": "{name} in Google Maps öffnen",
+        "open": "Geöffnet",
+        "closed": "Geschlossen",
+        "walkingTime": "Wie weit zu Fuß?",
+        "calculating": "Wird berechnet…",
+        "rating": "Bewertung {rating} Sterne, {count} Rezensionen",
+        "priceLabel": "Preis: {label}"
+    },
+    "restaurantList": {
+        "fetchError": "Restaurants konnten nicht geladen werden",
+        "filteredEmpty": {
+            "title": "Keine Restaurants entsprechen deinen Filtern",
+            "description": "Versuche den Preisfilter zu lockern oder \"Nur geöffnete Restaurants anzeigen\" umzuschalten"
+        },
+        "empty": {
+            "title": "Keine Restaurants in der Nähe gefunden",
+            "description": "Versuche den Suchbereich zu erweitern oder an einen belebteren Ort zu gehen"
+        },
+        "idle": {
+            "title": "Tippe auf die Schaltfläche, um Essen in der Nähe zu entdecken",
+            "description": "Sucht im Umkreis von 1,0 km"
+        }
+    },
+    "home": {
+        "heading": "Was essen wir heute?",
+        "headingAccent": "Lass mich entscheiden",
+        "subheading": "Restaurants im Umkreis von 1,0 km suchen",
+        "openNow": "Nur geöffnete Restaurants anzeigen",
+        "locationError": "Standort konnte nicht ermittelt werden",
+        "throttleNotice": "Bitte warte einen Moment vor der nächsten Suche ☕",
+        "quotaTitle": "🔧 Server ausgelastet",
+        "quotaMessage": "API-Kontingent überschritten, bitte später erneut versuchen",
+        "sortLabel": "Sortierung:",
+        "sortAriaLabel": "Sortieroptionen",
+        "sortDistance": "Entfernung",
+        "sortRating": "Bewertung",
+        "fetchButton": "Restaurants in der Nähe finden 🍜",
+        "fetchButtonLoading": "Suche läuft…",
+        "fetchButtonThrottled": "Später erneut versuchen"
+    },
+    "common": {
+        "error": "Ein Fehler ist aufgetreten",
+        "loading": "Wird geladen…"
+    },
+    "geolocation": {
+        "unsupported": "Dieser Browser unterstützt keine Geolokalisierung",
+        "permissionDenied": "Standortzugriff verweigert. Bitte in den Browsereinstellungen erlauben",
+        "positionUnavailable": "Standort konnte nicht ermittelt werden. Bitte prüfe, ob GPS aktiviert ist",
+        "timeout": "Standortabfrage abgelaufen. Bitte erneut versuchen",
+        "unknown": "Ein unbekannter Fehler ist aufgetreten. Bitte erneut versuchen"
+    },
+    "walkingTime": {
+        "noLocation": "Standort noch nicht verfügbar",
+        "fetchError": "Gehzeit konnte nicht ermittelt werden",
+        "duration": "Ca. {minutes} Min."
+    },
+    "errors": {
+        "fetchRestaurants": "Restaurants in der Nähe konnten nicht geladen werden, bitte später erneut versuchen"
+    }
+}
