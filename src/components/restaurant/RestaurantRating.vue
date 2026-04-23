@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-1.5" :aria-label="`評分 ${rating} 顆星，共 ${count} 則評論`">
+  <div class="flex items-center gap-1.5" :aria-label="t('restaurant.rating', { rating, count })">
     <div class="flex" aria-hidden="true">
       <span
         v-for="i in 5"
@@ -13,12 +13,15 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 interface Props {
   rating: number
   count?: number
 }
 
 const props = defineProps<Props>()
+const { t } = useI18n()
 
 function starChar(index: number): string {
   const filled = props.rating >= index

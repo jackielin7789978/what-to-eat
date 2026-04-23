@@ -1,9 +1,9 @@
 <template>
   <div class="flex items-center gap-2">
-    <span class="shrink-0 text-sm text-text-muted">價位：</span>
+    <span class="shrink-0 text-sm text-text-muted">{{ t('priceLevel.label') }}</span>
     <div class="flex gap-1.5 overflow-x-auto">
       <button
-        v-for="option in OPTIONS"
+        v-for="option in options"
         :key="option.label"
         type="button"
         class="whitespace-nowrap rounded-full border px-3 py-1 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1"
@@ -21,6 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { PriceLevel } from '@/types/restaurant'
 
 interface PriceOption {
@@ -28,13 +30,15 @@ interface PriceOption {
   value: PriceLevel | null
 }
 
-const OPTIONS: PriceOption[] = [
-  { label: '全部',       value: null },
-  { label: '💰',        value: 'PRICE_LEVEL_INEXPENSIVE' },
-  { label: '💰💰',      value: 'PRICE_LEVEL_MODERATE' },
-  { label: '💰💰💰',    value: 'PRICE_LEVEL_EXPENSIVE' },
-  { label: '💰💰💰💰',  value: 'PRICE_LEVEL_VERY_EXPENSIVE' },
-]
+const { t } = useI18n()
+
+const options = computed((): PriceOption[] => [
+  { label: t('priceLevel.all'), value: null },
+  { label: '💰',               value: 'PRICE_LEVEL_INEXPENSIVE' },
+  { label: '💰💰',             value: 'PRICE_LEVEL_MODERATE' },
+  { label: '💰💰💰',           value: 'PRICE_LEVEL_EXPENSIVE' },
+  { label: '💰💰💰💰',         value: 'PRICE_LEVEL_VERY_EXPENSIVE' },
+])
 
 defineProps<{ modelValue: PriceLevel | null }>()
 defineEmits<{ 'update:modelValue': [value: PriceLevel | null] }>()

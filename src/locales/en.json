@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "What's Nearby to Eat?"
+  },
+  "theme": {
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
+  },
+  "footer": {
+    "text": "Data source: Google Maps Platform · For reference only; please verify on-site"
+  },
+  "category": {
+    "random": "Random",
+    "taiwanese": "Taiwanese",
+    "japanese": "Japanese",
+    "korean": "Korean",
+    "chinese": "Chinese",
+    "hot_pot": "Hot Pot",
+    "fast_food": "Fast Food",
+    "southeast_asian": "Southeast Asian",
+    "western": "Western",
+    "italian": "Italian",
+    "vegetarian": "Vegetarian",
+    "cafe_dessert": "Café & Dessert",
+    "drinks": "Drinks"
+  },
+  "payment": {
+    "creditCard": "Credit Card",
+    "debitCard": "Debit Card",
+    "nfc": "Contactless",
+    "cashOnly": "Cash Only"
+  },
+  "priceLevel": {
+    "label": "Price:",
+    "all": "All",
+    "free": "Free",
+    "inexpensive": "Cheap",
+    "moderate": "Moderate",
+    "expensive": "Expensive",
+    "veryExpensive": "Premium"
+  },
+  "restaurant": {
+    "openMaps": "Open {name} on Google Maps",
+    "open": "Open",
+    "closed": "Closed",
+    "walkingTime": "How far to walk?",
+    "calculating": "Calculating…",
+    "rating": "Rating {rating} stars, {count} reviews",
+    "priceLabel": "Price: {label}"
+  },
+  "restaurantList": {
+    "fetchError": "Failed to fetch restaurants",
+    "filteredEmpty": {
+      "title": "No restaurants match your filters",
+      "description": "Try relaxing the price filter or toggling 'Show open restaurants only'"
+    },
+    "empty": {
+      "title": "No restaurants found nearby",
+      "description": "Try expanding the search area or moving to a busier location"
+    },
+    "idle": {
+      "title": "Tap the button to explore nearby food",
+      "description": "Will search within 1.0km"
+    }
+  },
+  "home": {
+    "heading": "What to eat today?",
+    "headingAccent": "Let me decide for you",
+    "subheading": "Search restaurants within 1.0km",
+    "openNow": "Show open restaurants only",
+    "locationError": "Cannot get location",
+    "throttleNotice": "Please wait a moment before searching again ☕",
+    "quotaTitle": "🔧 Server Busy",
+    "quotaMessage": "API quota exceeded, please try again later",
+    "sortLabel": "Sort:",
+    "sortAriaLabel": "Sort options",
+    "sortDistance": "Distance",
+    "sortRating": "Rating",
+    "fetchButton": "Find Nearby Restaurants 🍜",
+    "fetchButtonLoading": "Searching…",
+    "fetchButtonThrottled": "Try Again Later"
+  },
+  "common": {
+    "error": "An error occurred",
+    "loading": "Loading…"
+  },
+  "geolocation": {
+    "unsupported": "This browser does not support geolocation",
+    "permissionDenied": "Location access denied. Please allow it in your browser settings",
+    "positionUnavailable": "Unable to get location. Please check if GPS is enabled",
+    "timeout": "Location timed out. Please try again",
+    "unknown": "An unknown error occurred. Please try again"
+  },
+  "walkingTime": {
+    "noLocation": "Location not yet available",
+    "fetchError": "Unable to get walking time",
+    "duration": "About {minutes} min"
+  },
+  "errors": {
+    "fetchRestaurants": "Unable to fetch nearby restaurants, please try again later"
+  }
+}

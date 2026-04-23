@@ -1,17 +1,14 @@
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useLocationStore } from '@/stores/useLocationStore'
 import { walkingTimeService } from '@/services/walkingTimeService'
 import type { WalkingTimeStatus } from '@/types/walkingTime'
 
-function formatDuration(seconds: number): string {
-  const minutes = Math.ceil(seconds / 60)
-  return `約 ${minutes} 分鐘`
-}
-
 export function useWalkingTime(restaurantId: string, destLat: number, destLng: number) {
   const restaurantStore = useRestaurantStore()
   const locationStore = useLocationStore()
+  const { t } = useI18n()
 
   const status = ref<WalkingTimeStatus>('idle')
   const formattedDuration = ref<string | null>(null)
@@ -34,7 +31,7 @@ export function useWalkingTime(restaurantId: string, destLat: number, destLng: n
     }
 
     if (!locationStore.latLng) {
-      error.value = '尚未取得定位'
+      error.value = t('walkingTime.noLocation')
       status.value = 'error'
       return
     }
@@ -50,16 +47,17 @@ export function useWalkingTime(restaurantId: string, destLat: number, destLng: n
         destLng,
       })
 
+      const minutes = Math.ceil(result.durationSeconds / 60)
       const fullResult = {
         ...result,
-        formattedDuration: formatDuration(result.durationSeconds),
+        formattedDuration: t('walkingTime.duration', { minutes }),
       }
 
       restaurantStore.cacheWalkingTime(restaurantId, fullResult)
       formattedDuration.value = fullResult.formattedDuration
       status.value = 'success'
     } catch (err: unknown) {
-      error.value = err instanceof Error ? err.message : '無法取得步行時間'
+      error.value = err instanceof Error ? err.message : t('walkingTime.fetchError')
       status.value = 'error'
     }
   }
