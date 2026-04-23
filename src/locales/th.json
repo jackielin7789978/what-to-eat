@@ -1,102 +1,102 @@
 {
-  "app": {
-    "title": "มีอะไรกินใกล้ๆ?"
-  },
-  "theme": {
-    "switchToDark": "สลับเป็นโหมดมืด",
-    "switchToLight": "สลับเป็นโหมดสว่าง"
-  },
-  "footer": {
-    "text": "แหล่งข้อมูล: Google Maps Platform · สำหรับอ้างอิงเท่านั้น กรุณาตรวจสอบสถานที่จริง"
-  },
-  "category": {
-    "random": "สุ่ม",
-    "taiwanese": "ไต้หวัน",
-    "japanese": "ญี่ปุ่น",
-    "korean": "เกาหลี",
-    "chinese": "จีน",
-    "hot_pot": "หม้อไฟ",
-    "fast_food": "ฟาสต์ฟู้ด",
-    "southeast_asian": "เอเชียตะวันออกเฉียงใต้",
-    "western": "ตะวันตก",
-    "italian": "อิตาลี",
-    "vegetarian": "มังสวิรัติ",
-    "cafe_dessert": "คาเฟ่และขนมหวาน",
-    "drinks": "เครื่องดื่ม"
-  },
-  "payment": {
-    "creditCard": "บัตรเครดิต",
-    "debitCard": "บัตรเดบิต",
-    "nfc": "ชำระแบบไร้สัมผัส",
-    "cashOnly": "เงินสดเท่านั้น"
-  },
-  "priceLevel": {
-    "label": "ราคา:",
-    "all": "ทั้งหมด",
-    "free": "ฟรี",
-    "inexpensive": "ถูก",
-    "moderate": "ปานกลาง",
-    "expensive": "แพง",
-    "veryExpensive": "หรูหรา"
-  },
-  "restaurant": {
-    "openMaps": "เปิด {name} ใน Google Maps",
-    "open": "เปิดอยู่",
-    "closed": "ปิดแล้ว",
-    "walkingTime": "เดินไปนานแค่ไหน?",
-    "calculating": "กำลังคำนวณ…",
-    "rating": "คะแนน {rating} ดาว, {count} รีวิว",
-    "priceLabel": "ราคา: {label}"
-  },
-  "restaurantList": {
-    "fetchError": "ไม่สามารถโหลดร้านอาหารได้",
-    "filteredEmpty": {
-      "title": "ไม่มีร้านอาหารที่ตรงกับตัวกรอง",
-      "description": "ลองผ่อนเงื่อนไขราคา หรือสลับ 'แสดงเฉพาะร้านที่เปิดอยู่'"
+    "app": {
+        "title": "มีอะไรกินใกล้ๆ?"
     },
-    "empty": {
-      "title": "ไม่พบร้านอาหารใกล้เคียง",
-      "description": "ลองขยายพื้นที่ค้นหา หรือย้ายไปบริเวณที่มีคนมากกว่า"
+    "theme": {
+        "switchToDark": "สลับเป็นโหมดมืด",
+        "switchToLight": "สลับเป็นโหมดสว่าง"
     },
-    "idle": {
-      "title": "แตะปุ่มเพื่อค้นหาอาหารใกล้เคียง",
-      "description": "จะค้นหาในรัศมี 1.0 กม."
+    "footer": {
+        "text": "แหล่งข้อมูล: Google Maps Platform · สำหรับอ้างอิงเท่านั้น กรุณาตรวจสอบสถานที่จริง"
+    },
+    "category": {
+        "random": "สุ่ม",
+        "taiwanese": "ไต้หวัน",
+        "japanese": "ญี่ปุ่น",
+        "korean": "เกาหลี",
+        "chinese": "จีน",
+        "hot_pot": "หม้อไฟ",
+        "fast_food": "ฟาสต์ฟู้ด",
+        "southeast_asian": "เอเชียตะวันออกเฉียงใต้",
+        "western": "ตะวันตก",
+        "italian": "อิตาลี",
+        "vegetarian": "มังสวิรัติ",
+        "cafe_dessert": "คาเฟ่และขนมหวาน",
+        "drinks": "เครื่องดื่ม"
+    },
+    "payment": {
+        "creditCard": "บัตรเครดิต",
+        "debitCard": "บัตรเดบิต",
+        "nfc": "ชำระแบบไร้สัมผัส",
+        "cashOnly": "เงินสดเท่านั้น"
+    },
+    "priceLevel": {
+        "label": "ราคา:",
+        "all": "ทั้งหมด",
+        "free": "ฟรี",
+        "inexpensive": "ถูก",
+        "moderate": "ปานกลาง",
+        "expensive": "แพง",
+        "veryExpensive": "หรูหรา"
+    },
+    "restaurant": {
+        "openMaps": "เปิด {name} ใน Google Maps",
+        "open": "เปิดอยู่",
+        "closed": "ปิดแล้ว",
+        "walkingTime": "เดินไปนานแค่ไหน?",
+        "calculating": "กำลังคำนวณ…",
+        "rating": "คะแนน {rating} ดาว, {count} รีวิว",
+        "priceLabel": "ราคา: {label}"
+    },
+    "restaurantList": {
+        "fetchError": "ไม่สามารถโหลดร้านอาหารได้",
+        "filteredEmpty": {
+            "title": "ไม่มีร้านอาหารที่ตรงกับตัวกรอง",
+            "description": "ลองผ่อนเงื่อนไขราคา หรือสลับ 'แสดงเฉพาะร้านที่เปิดอยู่'"
+        },
+        "empty": {
+            "title": "ไม่พบร้านอาหารใกล้เคียง",
+            "description": "ลองขยายพื้นที่ค้นหา หรือย้ายไปบริเวณที่มีคนมากกว่า"
+        },
+        "idle": {
+            "title": "แตะปุ่มเพื่อค้นหาอาหารใกล้เคียง",
+            "description": "จะค้นหาในรัศมี 1.0 กม."
+        }
+    },
+    "home": {
+        "heading": "วันนี้กินอะไรดี?",
+        "headingAccent": "ให้ฉันช่วยตัดสินใจ",
+        "subheading": "ค้นหาร้านอาหารในรัศมี 1.0 กม.",
+        "openNow": "แสดงเฉพาะร้านที่เปิดอยู่",
+        "locationError": "ไม่สามารถรับตำแหน่งได้",
+        "throttleNotice": "กรุณารอสักครู่แล้วค้นหาใหม่ ☕",
+        "quotaTitle": "🔧 เซิร์ฟเวอร์ยุ่ง",
+        "quotaMessage": "โควต้า API เต็มแล้ว กรุณาลองใหม่ภายหลัง",
+        "sortLabel": "เรียงโดย:",
+        "sortAriaLabel": "ตัวเลือกการเรียง",
+        "sortDistance": "ระยะทาง",
+        "sortRating": "คะแนน",
+        "fetchButton": "ค้นหาร้านใกล้เคียง 🍜",
+        "fetchButtonLoading": "กำลังค้นหา…",
+        "fetchButtonThrottled": "ลองใหม่ภายหลัง"
+    },
+    "common": {
+        "error": "เกิดข้อผิดพลาด",
+        "loading": "กำลังโหลด…"
+    },
+    "geolocation": {
+        "unsupported": "เบราว์เซอร์นี้ไม่รองรับการระบุตำแหน่ง",
+        "permissionDenied": "ถูกปฏิเสธสิทธิ์เข้าถึงตำแหน่ง กรุณาอนุญาตในการตั้งค่าเบราว์เซอร์",
+        "positionUnavailable": "ไม่สามารถรับตำแหน่งได้ กรุณาตรวจสอบว่า GPS เปิดอยู่",
+        "timeout": "การระบุตำแหน่งหมดเวลา กรุณาลองใหม่",
+        "unknown": "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ กรุณาลองใหม่"
+    },
+    "walkingTime": {
+        "noLocation": "ยังไม่ได้รับตำแหน่ง",
+        "fetchError": "ไม่สามารถรับเวลาเดิน",
+        "duration": "ประมาณ {minutes} นาที"
+    },
+    "errors": {
+        "fetchRestaurants": "ไม่สามารถโหลดร้านอาหารใกล้เคียงได้ กรุณาลองใหม่ภายหลัง"
     }
-  },
-  "home": {
-    "heading": "วันนี้กินอะไรดี?",
-    "headingAccent": "ให้ฉันช่วยตัดสินใจ",
-    "subheading": "ค้นหาร้านอาหารในรัศมี 1.0 กม.",
-    "openNow": "แสดงเฉพาะร้านที่เปิดอยู่",
-    "locationError": "ไม่สามารถรับตำแหน่งได้",
-    "throttleNotice": "กรุณารอสักครู่แล้วค้นหาใหม่ ☕",
-    "quotaTitle": "🔧 เซิร์ฟเวอร์ยุ่ง",
-    "quotaMessage": "โควต้า API เต็มแล้ว กรุณาลองใหม่ภายหลัง",
-    "sortLabel": "เรียงโดย:",
-    "sortAriaLabel": "ตัวเลือกการเรียง",
-    "sortDistance": "ระยะทาง",
-    "sortRating": "คะแนน",
-    "fetchButton": "ค้นหาร้านใกล้เคียง 🍜",
-    "fetchButtonLoading": "กำลังค้นหา…",
-    "fetchButtonThrottled": "ลองใหม่ภายหลัง"
-  },
-  "common": {
-    "error": "เกิดข้อผิดพลาด",
-    "loading": "กำลังโหลด…"
-  },
-  "geolocation": {
-    "unsupported": "เบราว์เซอร์นี้ไม่รองรับการระบุตำแหน่ง",
-    "permissionDenied": "ถูกปฏิเสธสิทธิ์เข้าถึงตำแหน่ง กรุณาอนุญาตในการตั้งค่าเบราว์เซอร์",
-    "positionUnavailable": "ไม่สามารถรับตำแหน่งได้ กรุณาตรวจสอบว่า GPS เปิดอยู่",
-    "timeout": "การระบุตำแหน่งหมดเวลา กรุณาลองใหม่",
-    "unknown": "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ กรุณาลองใหม่"
-  },
-  "walkingTime": {
-    "noLocation": "ยังไม่ได้รับตำแหน่ง",
-    "fetchError": "ไม่สามารถรับเวลาเดิน",
-    "duration": "ประมาณ {minutes} นาที"
-  },
-  "errors": {
-    "fetchRestaurants": "ไม่สามารถโหลดร้านอาหารใกล้เคียงได้ กรุณาลองใหม่ภายหลัง"
-  }
 }

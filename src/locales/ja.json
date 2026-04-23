@@ -1,102 +1,102 @@
 {
-  "app": {
-    "title": "近くに何がある？"
-  },
-  "theme": {
-    "switchToDark": "ダークモードに切り替え",
-    "switchToLight": "ライトモードに切り替え"
-  },
-  "footer": {
-    "text": "データ提供：Google Maps Platform · 参考情報です。実際の状況は現地でご確認ください"
-  },
-  "category": {
-    "random": "ランダム",
-    "taiwanese": "台湾料理",
-    "japanese": "和食",
-    "korean": "韓国料理",
-    "chinese": "中華料理",
-    "hot_pot": "鍋料理",
-    "fast_food": "ファストフード",
-    "southeast_asian": "東南アジア料理",
-    "western": "洋食",
-    "italian": "イタリア料理",
-    "vegetarian": "ベジタリアン",
-    "cafe_dessert": "カフェ・スイーツ",
-    "drinks": "ドリンク"
-  },
-  "payment": {
-    "creditCard": "クレジットカード",
-    "debitCard": "デビットカード",
-    "nfc": "タッチ決済",
-    "cashOnly": "現金のみ"
-  },
-  "priceLevel": {
-    "label": "価格帯：",
-    "all": "すべて",
-    "free": "無料",
-    "inexpensive": "安い",
-    "moderate": "普通",
-    "expensive": "やや高い",
-    "veryExpensive": "高級"
-  },
-  "restaurant": {
-    "openMaps": "{name} を Google Maps で開く",
-    "open": "営業中",
-    "closed": "休業中",
-    "walkingTime": "徒歩時間は？",
-    "calculating": "計算中…",
-    "rating": "評価 {rating} 星、{count} 件のレビュー",
-    "priceLabel": "価格帯：{label}"
-  },
-  "restaurantList": {
-    "fetchError": "レストランの取得に失敗しました",
-    "filteredEmpty": {
-      "title": "条件に合うレストランがありません",
-      "description": "価格帯フィルターを緩めるか、「営業中のみ表示」を切り替えてみてください"
+    "app": {
+        "title": "近くに何がある？"
     },
-    "empty": {
-      "title": "近くにレストランが見つかりません",
-      "description": "検索範囲を広げるか、人の多い場所で再試行してください"
+    "theme": {
+        "switchToDark": "ダークモードに切り替え",
+        "switchToLight": "ライトモードに切り替え"
     },
-    "idle": {
-      "title": "ボタンをタップして近くの飲食店を探す",
-      "description": "半径 1.0km 以内を検索します"
+    "footer": {
+        "text": "データ提供：Google Maps Platform · 参考情報です。実際の状況は現地でご確認ください"
+    },
+    "category": {
+        "random": "ランダム",
+        "taiwanese": "台湾料理",
+        "japanese": "和食",
+        "korean": "韓国料理",
+        "chinese": "中華料理",
+        "hot_pot": "鍋料理",
+        "fast_food": "ファストフード",
+        "southeast_asian": "東南アジア料理",
+        "western": "洋食",
+        "italian": "イタリア料理",
+        "vegetarian": "ベジタリアン",
+        "cafe_dessert": "カフェ・スイーツ",
+        "drinks": "ドリンク"
+    },
+    "payment": {
+        "creditCard": "クレジットカード",
+        "debitCard": "デビットカード",
+        "nfc": "タッチ決済",
+        "cashOnly": "現金のみ"
+    },
+    "priceLevel": {
+        "label": "価格帯：",
+        "all": "すべて",
+        "free": "無料",
+        "inexpensive": "安い",
+        "moderate": "普通",
+        "expensive": "やや高い",
+        "veryExpensive": "高級"
+    },
+    "restaurant": {
+        "openMaps": "{name} を Google Maps で開く",
+        "open": "営業中",
+        "closed": "休業中",
+        "walkingTime": "徒歩時間は？",
+        "calculating": "計算中…",
+        "rating": "評価 {rating} 星、{count} 件のレビュー",
+        "priceLabel": "価格帯：{label}"
+    },
+    "restaurantList": {
+        "fetchError": "レストランの取得に失敗しました",
+        "filteredEmpty": {
+            "title": "条件に合うレストランがありません",
+            "description": "価格帯フィルターを緩めるか、「営業中のみ表示」を切り替えてみてください"
+        },
+        "empty": {
+            "title": "近くにレストランが見つかりません",
+            "description": "検索範囲を広げるか、人の多い場所で再試行してください"
+        },
+        "idle": {
+            "title": "ボタンをタップして近くの飲食店を探す",
+            "description": "半径 1.0km 以内を検索します"
+        }
+    },
+    "home": {
+        "heading": "今日は何を食べる？",
+        "headingAccent": "お任せください",
+        "subheading": "半径 1.0km 以内のレストランを検索",
+        "openNow": "営業中の店舗のみ表示",
+        "locationError": "位置情報を取得できません",
+        "throttleNotice": "しばらく待ってから再検索してください ☕",
+        "quotaTitle": "🔧 サーバーが混雑中",
+        "quotaMessage": "API の使用上限に達しました。しばらくしてから再試行してください",
+        "sortLabel": "並び順：",
+        "sortAriaLabel": "並び替えオプション",
+        "sortDistance": "距離",
+        "sortRating": "評価",
+        "fetchButton": "近くのレストランを探す 🍜",
+        "fetchButtonLoading": "検索中…",
+        "fetchButtonThrottled": "後でもう一度"
+    },
+    "common": {
+        "error": "エラーが発生しました",
+        "loading": "読み込み中…"
+    },
+    "geolocation": {
+        "unsupported": "このブラウザは位置情報をサポートしていません",
+        "permissionDenied": "位置情報へのアクセスが拒否されました。ブラウザの設定で許可してください",
+        "positionUnavailable": "位置情報を取得できません。GPS が有効かご確認ください",
+        "timeout": "位置情報の取得がタイムアウトしました。再試行してください",
+        "unknown": "不明なエラーが発生しました。再試行してください"
+    },
+    "walkingTime": {
+        "noLocation": "位置情報が取得されていません",
+        "fetchError": "徒歩時間を取得できません",
+        "duration": "約 {minutes} 分"
+    },
+    "errors": {
+        "fetchRestaurants": "近くのレストランを取得できませんでした。後で再試行してください"
     }
-  },
-  "home": {
-    "heading": "今日は何を食べる？",
-    "headingAccent": "お任せください",
-    "subheading": "半径 1.0km 以内のレストランを検索",
-    "openNow": "営業中の店舗のみ表示",
-    "locationError": "位置情報を取得できません",
-    "throttleNotice": "しばらく待ってから再検索してください ☕",
-    "quotaTitle": "🔧 サーバーが混雑中",
-    "quotaMessage": "API の使用上限に達しました。しばらくしてから再試行してください",
-    "sortLabel": "並び順：",
-    "sortAriaLabel": "並び替えオプション",
-    "sortDistance": "距離",
-    "sortRating": "評価",
-    "fetchButton": "近くのレストランを探す 🍜",
-    "fetchButtonLoading": "検索中…",
-    "fetchButtonThrottled": "後でもう一度"
-  },
-  "common": {
-    "error": "エラーが発生しました",
-    "loading": "読み込み中…"
-  },
-  "geolocation": {
-    "unsupported": "このブラウザは位置情報をサポートしていません",
-    "permissionDenied": "位置情報へのアクセスが拒否されました。ブラウザの設定で許可してください",
-    "positionUnavailable": "位置情報を取得できません。GPS が有効かご確認ください",
-    "timeout": "位置情報の取得がタイムアウトしました。再試行してください",
-    "unknown": "不明なエラーが発生しました。再試行してください"
-  },
-  "walkingTime": {
-    "noLocation": "位置情報が取得されていません",
-    "fetchError": "徒歩時間を取得できません",
-    "duration": "約 {minutes} 分"
-  },
-  "errors": {
-    "fetchRestaurants": "近くのレストランを取得できませんでした。後で再試行してください"
-  }
 }
