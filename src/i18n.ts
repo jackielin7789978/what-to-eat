@@ -4,6 +4,7 @@ import zhHans from './locales/zh-Hans.json'
 import ja from './locales/ja.json'
 import th from './locales/th.json'
 import en from './locales/en.json'
+import de from './locales/de.json'
 
 type MessageSchema = typeof zhHant
 
@@ -13,10 +14,11 @@ function detectLocale(): string {
   if (lang.startsWith('zh')) return 'zh-Hans'
   if (lang.startsWith('ja')) return 'ja'
   if (lang.startsWith('th')) return 'th'
+  if (lang.startsWith('de')) return 'de'
   return 'en'
 }
 
-export const i18n = createI18n<[MessageSchema], 'zh-Hant' | 'zh-Hans' | 'ja' | 'th' | 'en'>({
+export const i18n = createI18n<[MessageSchema], 'zh-Hant' | 'zh-Hans' | 'ja' | 'th' | 'en' | 'de'>({
   legacy: false,
   locale: detectLocale(),
   fallbackLocale: 'zh-Hant',
@@ -26,5 +28,6 @@ export const i18n = createI18n<[MessageSchema], 'zh-Hant' | 'zh-Hans' | 'ja' | '
     ja,
     th,
     en,
+    de
   },
 })
