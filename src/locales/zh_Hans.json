@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "附近有什么吃的？"
+  },
+  "theme": {
+    "switchToDark": "切换为深色模式",
+    "switchToLight": "切换为浅色模式"
+  },
+  "footer": {
+    "text": "数据来源：Google Maps Platform · 仅供参考，实际情况请以现场为准"
+  },
+  "category": {
+    "random": "随机",
+    "taiwanese": "台式",
+    "japanese": "日式",
+    "korean": "韩式",
+    "chinese": "中式",
+    "hot_pot": "火锅",
+    "fast_food": "快餐",
+    "southeast_asian": "东南亚",
+    "western": "西式",
+    "italian": "意式",
+    "vegetarian": "素食",
+    "cafe_dessert": "咖啡甜品",
+    "drinks": "饮料"
+  },
+  "payment": {
+    "creditCard": "信用卡",
+    "debitCard": "借记卡",
+    "nfc": "感应支付",
+    "cashOnly": "仅收现金"
+  },
+  "priceLevel": {
+    "label": "价位：",
+    "all": "全部",
+    "free": "免费",
+    "inexpensive": "便宜",
+    "moderate": "中等",
+    "expensive": "较贵",
+    "veryExpensive": "高级"
+  },
+  "restaurant": {
+    "openMaps": "在 Google Maps 上打开 {name}",
+    "open": "营业中",
+    "closed": "休息中",
+    "walkingTime": "要走多久？",
+    "calculating": "计算中…",
+    "rating": "评分 {rating} 颗星，共 {count} 条评论",
+    "priceLabel": "价位：{label}"
+  },
+  "restaurantList": {
+    "fetchError": "获取餐厅失败",
+    "filteredEmpty": {
+      "title": "没有符合筛选条件的餐厅",
+      "description": "试试放宽价位筛选，或切换「仅显示营业中的店家」看看"
+    },
+    "empty": {
+      "title": "附近没有找到餐厅",
+      "description": "试着扩大搜索范围，或到人多的地方再试试看"
+    },
+    "idle": {
+      "title": "点击按钮，探索附近美食",
+      "description": "将搜索方圆 1.0km 内的餐厅"
+    }
+  },
+  "home": {
+    "heading": "今天吃什么？",
+    "headingAccent": "让我帮你决定",
+    "subheading": "搜索你方圆 1.0km 内的餐厅",
+    "openNow": "仅显示营业中的店家",
+    "locationError": "无法获取位置",
+    "throttleNotice": "请稍等一下再重新搜索 ☕",
+    "quotaTitle": "🔧 服务器繁忙",
+    "quotaMessage": "API 使用量已达上限，请稍后再试",
+    "sortLabel": "排序：",
+    "sortAriaLabel": "排序方式",
+    "sortDistance": "距离",
+    "sortRating": "评分",
+    "fetchButton": "获取附近餐厅 🍜",
+    "fetchButtonLoading": "搜索中…",
+    "fetchButtonThrottled": "稍后再试"
+  },
+  "common": {
+    "error": "发生错误",
+    "loading": "加载中…"
+  },
+  "geolocation": {
+    "unsupported": "此浏览器不支持地理定位功能",
+    "permissionDenied": "用户拒绝了位置访问权限，请在浏览器设置中允许",
+    "positionUnavailable": "目前无法获取位置信息，请确认设备 GPS 是否开启",
+    "timeout": "定位超时，请再试一次",
+    "unknown": "发生未知错误，请再试一次"
+  },
+  "walkingTime": {
+    "noLocation": "尚未获取定位",
+    "fetchError": "无法获取步行时间",
+    "duration": "约 {minutes} 分钟"
+  },
+  "errors": {
+    "fetchRestaurants": "无法获取附近餐厅，请稍后再试"
+  }
+}

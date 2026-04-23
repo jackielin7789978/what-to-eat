@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "附近有什麼吃的？"
+  },
+  "theme": {
+    "switchToDark": "切換為深色模式",
+    "switchToLight": "切換為淺色模式"
+  },
+  "footer": {
+    "text": "資料來源：Google Maps Platform · 僅供參考，實際狀況請以現場為準"
+  },
+  "category": {
+    "random": "隨機",
+    "taiwanese": "台式",
+    "japanese": "日式",
+    "korean": "韓式",
+    "chinese": "中式",
+    "hot_pot": "火鍋",
+    "fast_food": "速食",
+    "southeast_asian": "東南亞",
+    "western": "西式",
+    "italian": "義式",
+    "vegetarian": "蔬食",
+    "cafe_dessert": "咖啡甜點",
+    "drinks": "飲料"
+  },
+  "payment": {
+    "creditCard": "信用卡",
+    "debitCard": "金融卡",
+    "nfc": "感應支付",
+    "cashOnly": "僅收現金"
+  },
+  "priceLevel": {
+    "label": "價位：",
+    "all": "全部",
+    "free": "免費",
+    "inexpensive": "便宜",
+    "moderate": "中等",
+    "expensive": "較貴",
+    "veryExpensive": "高級"
+  },
+  "restaurant": {
+    "openMaps": "開啟 {name} 的 Google Maps 頁面",
+    "open": "營業中",
+    "closed": "休息中",
+    "walkingTime": "要走多久？",
+    "calculating": "計算中…",
+    "rating": "評分 {rating} 顆星，共 {count} 則評論",
+    "priceLabel": "價位：{label}"
+  },
+  "restaurantList": {
+    "fetchError": "取得餐廳失敗",
+    "filteredEmpty": {
+      "title": "沒有符合篩選條件的餐廳",
+      "description": "試試放寬價位篩選，或切換「僅顯示營業中的店家」看看"
+    },
+    "empty": {
+      "title": "附近沒有找到餐廳",
+      "description": "試著擴大搜尋範圍，或到人多的地方再試試看"
+    },
+    "idle": {
+      "title": "點擊按鈕，探索附近美食",
+      "description": "將搜尋方圓 1.0km 內的餐廳"
+    }
+  },
+  "home": {
+    "heading": "今天吃什麼？",
+    "headingAccent": "讓我幫你決定",
+    "subheading": "搜尋你方圓 1.0km 內的餐廳",
+    "openNow": "僅顯示營業中的店家",
+    "locationError": "無法取得位置",
+    "throttleNotice": "請稍等一下再重新搜尋 ☕",
+    "quotaTitle": "🔧 伺服器忙碌中",
+    "quotaMessage": "API 使用量已達上限，請稍後再試",
+    "sortLabel": "排序：",
+    "sortAriaLabel": "排序方式",
+    "sortDistance": "距離",
+    "sortRating": "評分",
+    "fetchButton": "取得附近餐廳 🍜",
+    "fetchButtonLoading": "搜尋中…",
+    "fetchButtonThrottled": "稍後再試"
+  },
+  "common": {
+    "error": "發生錯誤",
+    "loading": "載入中…"
+  },
+  "geolocation": {
+    "unsupported": "此瀏覽器不支援地理定位功能",
+    "permissionDenied": "使用者拒絕了位置存取權限，請在瀏覽器設定中允許",
+    "positionUnavailable": "目前無法取得位置資訊，請確認裝置 GPS 是否開啟",
+    "timeout": "定位逾時，請再試一次",
+    "unknown": "發生未知錯誤，請再試一次"
+  },
+  "walkingTime": {
+    "noLocation": "尚未取得定位",
+    "fetchError": "無法取得步行時間",
+    "duration": "約 {minutes} 分鐘"
+  },
+  "errors": {
+    "fetchRestaurants": "無法取得附近餐廳，請稍後再試"
+  }
+}
