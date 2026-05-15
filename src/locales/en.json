@@ -82,7 +82,8 @@
   },
   "common": {
     "error": "An error occurred",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "hello": "Hello"
   },
   "geolocation": {
     "unsupported": "This browser does not support geolocation",
