@@ -82,7 +82,8 @@
   },
   "common": {
     "error": "發生錯誤",
-    "loading": "載入中…"
+    "loading": "載入中…",
+    "hello": "哈囉"
   },
   "geolocation": {
     "unsupported": "此瀏覽器不支援地理定位功能",
